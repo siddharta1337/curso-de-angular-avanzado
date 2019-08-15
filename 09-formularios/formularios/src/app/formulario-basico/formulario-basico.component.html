@@ -1,0 +1,26 @@
+<div class="container">
+  <!---- Seccion de productos (componentes stateless)-->
+  <section class="section">
+    <h1 class="title">Contact</h1>
+
+    <div class="column is-full">
+      <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)" novalidate>
+        <div class="control">
+          <label class="label">Username</label>
+          <input type="text" name="user" ngModel #user="ngModel" required />
+        </div>
+
+        <div class="control">
+          <label class="label">Email</label>
+          <input type="email" name="email" ngModel #email="ngModel" required />
+        </div>
+
+        <input type="submit" [disabled]="!formulario.valid" />
+      </form>
+    </div>
+  </section>
+
+  {{ formulario.valid }}
+
+  <section></section>
+</div>

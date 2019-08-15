@@ -1,0 +1,39 @@
+<div
+  class="is-one-quarter"
+  (contextmenu)="onRightClick()"
+  (click)="onRegularClick()"
+>
+  <span
+    (click)="desSeleccionarItem()"
+    class="icon has-text-info close-icon"
+    [ngClass]="{ 'is-hidden': !isItemDisabled() }"
+  >
+    <i class="fas fa-times-circle"></i>
+  </span>
+  <div class="card">
+    <div class="card-image">
+      <app-contenedor-imagen [imagen]="producto.imagen"></app-contenedor-imagen>
+    </div>
+    <div class="card-content">
+      <strong>{{ producto.titulo }}</strong
+      ><br />
+      <p>
+        {{ producto.texto }}
+      </p>
+
+      <button
+        class="button is-fullwidth is-small"
+        (click)="seleccionarItem()"
+        [disabled]="isItemDisabled()"
+        [ngClass]="{ 'is-danger': !isItemDisabled() }"
+      >
+        {{ accionCompra }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="contextual" [ngClass]="{ visible: menuVisible }">
+  {{ producto.titulo }}
+  {{ producto.precio | currency }}
+</div>

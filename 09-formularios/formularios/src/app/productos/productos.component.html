@@ -1,0 +1,27 @@
+<div class="container">
+  <!---- Seccion de productos (componentes stateless)-->
+  <section class="section">
+    <h1 class="title">PRODUCTS</h1>
+    <div class="columns">
+      <div class="column" *ngFor="let item of modeloTienda.tiendaItems">
+        <!-----  ------>
+
+        <app-sin-estado
+          [producto]="item"
+          (productoSeleccionado)="onProductoSeleccionado($event)"
+          (productoDesSeleccionado)="onProductoDesSeleccionado($event)"
+        ></app-sin-estado>
+
+        <!-----  ------>
+      </div>
+    </div>
+  </section>
+
+  <section></section>
+</div>
+<app-shopping-cart-status
+  [precio]="precioTotal"
+  [modeloDeTienda]="modeloTienda.tiendaItems"
+  (pagar)="onPagar()"
+></app-shopping-cart-status>
+<app-alerta-confirmacion [cantidad]="precioTotal"></app-alerta-confirmacion>

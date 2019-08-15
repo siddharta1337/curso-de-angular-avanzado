@@ -1,0 +1,78 @@
+html,
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #e7c84c;
+}
+
+nav {
+  margin: 10px 0;
+}
+
+nav a.active {
+  color: red;
+  border-bottom: solid;
+}
+a {
+  color: #00b7ff;
+}
+
+.contenidos {
+  max-width: 950px;
+  margin: auto;
+}
+
+.contenidos p {
+  margin: 10px 0;
+}
+.item-price {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+}
+
+.panel-block {
+  background: #fff;
+  position: relative;
+}
+
+.card-content p {
+  margin: 20px 0;
+}
+
+app-sin-estado .is-one-quarter {
+  position: relative;
+}
+.close-icon {
+  position: absolute;
+  right: 6px;
+  z-index: 1;
+  font-size: 24px;
+  top: 5px;
+}
+.is-hidden {
+  display: none;
+}
+app-sin-estado {
+  position: relative;
+  display: block;
+}
+app-sin-estado .contextual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 133px;
+  padding: 16px;
+  border: solid;
+  font-weight: bold;
+  display: none;
+}
+
+app-sin-estado .contextual.visible {
+  display: block;
+}
+
+app-sin-estado .contextual.invisible {
+  display: none;
+}

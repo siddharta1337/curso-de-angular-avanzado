@@ -1,0 +1,34 @@
+<div *ngIf="precio > 0">
+  <div class="columns">
+    <nav class="panel is-three-quarter column">
+      <p class="panel-heading">
+        Shopping Cart
+      </p>
+
+      <div *ngFor="let item of modeloDeTienda">
+        <div class="panel-block" *ngIf="item.status == 'active'">
+          {{ item.titulo }}
+          <span class="item-price">
+            {{ item.precio | currency }}
+          </span>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="columns">
+    <div class="column is-fullwidth">
+      <div class="is-pulled-right">
+        <div class="is is-one-quarter ">
+          <h2 class="title">Total {{ precio | currency }}</h2>
+        </div>
+        <button
+          class="button is-link  is-pulled-right is-danger"
+          (click)="realizarPago()"
+        >
+          BUY NOW
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <section class="section">
+    <h1 class="title">Contact</h1>
+
+    <div class="column is-full">
+      <form
+        [formGroup]="formulario"
+        (ngSubmit)="onSubmit(formulario)"
+        novalidate
+      >
+        <div class="control">
+          <label class="label">Username</label>
+          <input formControlName="name" class="input" />
+          <div
+            class="error"
+            *ngIf="formulario.get('name').hasError('required')"
+          >
+            Please provide a valid name.
+          </div>
+        </div>
+
+        <div class="control">
+          <label class="label">Email</label>
+          <input formControlName="email" class="input" />
+        </div>
+
+        <input type="submit" [disabled]="!formulario.valid" />
+      </form>
+    </div>
+  </section>
+
+  <section>{{ formulario.controls.name.errors | json }}</section>
+</div>
